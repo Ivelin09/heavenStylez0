@@ -1,0 +1,249 @@
+body {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+.Header {
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    padding: 1%;
+    margin: 0;
+    color: black;
+    display: flex;
+    top: 0;
+}
+
+.Header * {
+    margin: 1%;
+}
+
+.animationPause {
+    animation-play-state: paused;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.navbar h2 {
+    font-size: 25px;
+    padding-left: 5%;
+}
+
+.topProducts {
+    grid-area: topProducts;
+    border-bottom: 2px solid #e0e0e0;
+    border-radius: 20px;
+}
+.products {
+    display: grid;
+        border-bottom: 2px solid #e0e0e0;
+    grid-template-columns: 20% 68%;
+    grid-template-areas:
+    ". topProducts" 
+    "filter sales"
+    "brands sales";
+}
+
+.bottomBar button {
+    border-radius: 10px;
+}
+
+
+.products .filter {
+    justify-self: left;
+}
+
+.sales {
+    grid-area: sales;
+}
+
+.filter {
+    border-bottom: 2px solid #e0e0e0;
+    grid-area: filter;
+    grid-row-start: 0;
+    grid-row-end: 1;
+}
+.products .filter h1 {
+    font-size: 30px;
+}
+
+.products img {
+
+    width: 290px;
+}
+
+.brands {
+    grid-area: brands;
+}
+
+.product {
+    text-align: center;
+}
+
+.product h1 {
+    font-weight: bold;
+}
+
+.product img {
+    display: inline;
+    border-radius: 20px;
+}
+
+.secondary img {
+    position: absolute;
+}
+
+.products > .sales {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+        transform: translateZ(0);
+}
+
+.product {
+    flex: 1 0 auto;
+    min-width: 25%;
+    margin-bottom: 2%; 
+    border-bottom: 2px solid #e0e0e0;    overflow: hidden;
+            transform: translateZ(0);
+            background-color: white;
+}
+
+.bag {
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    padding: 1% 5% 1% 5%;
+
+}
+
+.left {
+    position: fixed;
+}
+
+.product:hover {
+    transform: scale(1.2);
+    border-radius: 20px;
+    z-index: 2;
+    overflow: hidden;
+    transition: 0.05s;
+}
+
+.bottomBar {
+    text-align: center;
+}
+
+.bottomBar button {
+    border: 2px solid black;
+    width: 70px;
+    height: 70px;
+    margin: 2%;
+    margin-top: 0;
+}
+
+.currentBar {
+    background-color: #808080;
+}
+
+.topProducts {
+    top: 50%;
+        align-items: center;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.topProducts h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.scroller {
+        align-items: center;
+  max-width: 100vw;
+}
+
+.scroller__inner {
+        align-items: center;
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.scroller[data-animated="true"] {
+        align-items: center;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 100s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+/* general styles */
+
+html {
+  color-scheme: dark;
+}
+
+.tag-list {
+        align-items: center;
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 1rem;
+  background: var(--clr-primary-400);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem -0.25rem var(--clr-primary-900);
+}
+
+/* for testing purposed to ensure the animation lined up correctly */
+.test {
+  background: red !important;
+}
